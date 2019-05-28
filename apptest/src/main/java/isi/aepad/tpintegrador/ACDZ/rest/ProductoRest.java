@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import isi.aepad.tpintegrador.ACDZ.apptest.domain.Producto;
-import isi.aepad.tpintegrador.ACDZ.repo.ProductRepository;
+import isi.aepad.tpintegrador.ACDZ.repository.ProductRepository;
 
 @RestController
 @RequestMapping("api/producto")

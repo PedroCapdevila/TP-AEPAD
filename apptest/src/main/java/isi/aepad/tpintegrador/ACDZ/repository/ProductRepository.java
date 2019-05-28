@@ -1,4 +1,4 @@
-package isi.aepad.tpintegrador.ACDZ.repo;
+package isi.aepad.tpintegrador.ACDZ.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
