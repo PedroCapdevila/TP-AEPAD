@@ -1,8 +1,8 @@
-package isi.aepad.tpintegrador.ACDZ.repository;
+package isi.aepad.tpintegrador.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import isi.aepad.tpintegrador.ACDZ.apptest.domain.Producto;
+import isi.aepad.tpintegrador.domain.Producto;
 
 public interface ProductRepository extends JpaRepository<Producto, Integer> {
 

@@ -1,4 +1,4 @@
-package isi.aepad.tpintegrador.ACDZ.apptest.domain;
+package isi.aepad.tpintegrador.domain;
 
 import java.util.Date;
 import java.util.List;
@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class OrdenDeCompra {
+public class Pedido {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +22,8 @@ public class OrdenDeCompra {
 	@OneToOne
 	private Cliente cliente;
 	
-	@OneToMany(mappedBy = "ordenDeCompra")
-	private List<DetalleOrdenDeCompra> detalleOrdenDeCompra;
+	@OneToMany(mappedBy = "pedido")
+	private List<DetallePedido> detallePedido;
 	
 	public Integer getId() {
 		return id;
@@ -49,18 +49,18 @@ public class OrdenDeCompra {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	public List<DetalleOrdenDeCompra> getDetalleOrdenDeCompra() {
-		return detalleOrdenDeCompra;
+	public List<DetallePedido> getDetallePedido() {
+		return detallePedido;
 	}
-	public void setDetalleOrdenDeCompra(List<DetalleOrdenDeCompra> detalleOrdenDeCompra) {
-		this.detalleOrdenDeCompra = detalleOrdenDeCompra;
+	public void setDetallePedido(List<DetallePedido> detallePedido) {
+		this.detallePedido = detallePedido;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cliente == null) ? 0 : cliente.hashCode());
-		result = prime * result + ((detalleOrdenDeCompra == null) ? 0 : detalleOrdenDeCompra.hashCode());
+		result = prime * result + ((detallePedido == null) ? 0 : detallePedido.hashCode());
 		result = prime * result + ((fecha == null) ? 0 : fecha.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nro == null) ? 0 : nro.hashCode());
@@ -74,16 +74,16 @@ public class OrdenDeCompra {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		OrdenDeCompra other = (OrdenDeCompra) obj;
+		Pedido other = (Pedido) obj;
 		if (cliente == null) {
 			if (other.cliente != null)
 				return false;
 		} else if (!cliente.equals(other.cliente))
 			return false;
-		if (detalleOrdenDeCompra == null) {
-			if (other.detalleOrdenDeCompra != null)
+		if (detallePedido == null) {
+			if (other.detallePedido != null)
 				return false;
-		} else if (!detalleOrdenDeCompra.equals(other.detalleOrdenDeCompra))
+		} else if (!detallePedido.equals(other.detallePedido))
 			return false;
 		if (fecha == null) {
 			if (other.fecha != null)
@@ -104,8 +104,8 @@ public class OrdenDeCompra {
 	}
 	@Override
 	public String toString() {
-		return "OrdenDeCompra [id=" + id + ", nro=" + nro + ", fecha=" + fecha + ", cliente=" + cliente
-				+ ", detalleOrdenDeCompra=" + detalleOrdenDeCompra + "]";
+		return "Pedido [id=" + id + ", nro=" + nro + ", fecha=" + fecha + ", cliente=" + cliente + ", detallePedido="
+				+ detallePedido + "]";
 	}
 	
 	

@@ -1,4 +1,4 @@
-package isi.aepad.tpintegrador.ACDZ.apptest.domain;
+package isi.aepad.tpintegrador.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package isi.aepad.tpintegrador.ACDZ.apptest.domain;
+package isi.aepad.tpintegrador.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Localidad {
-
+public class MedioDePago {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -41,7 +41,7 @@ public class Localidad {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Localidad other = (Localidad) obj;
+		MedioDePago other = (MedioDePago) obj;
 		if (descripcion == null) {
 			if (other.descripcion != null)
 				return false;
@@ -56,7 +56,7 @@ public class Localidad {
 	}
 	@Override
 	public String toString() {
-		return "Localidad [id=" + id + ", descripcion=" + descripcion + "]";
+		return "MedioDePago [id=" + id + ", descripcion=" + descripcion + "]";
 	}
 	
 }

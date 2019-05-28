@@ -1,4 +1,4 @@
-package isi.aepad.tpintegrador.ACDZ.rest;
+package isi.aepad.tpintegrador.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import isi.aepad.tpintegrador.ACDZ.apptest.domain.Producto;
-import isi.aepad.tpintegrador.ACDZ.repository.ProductRepository;
+
+import isi.aepad.tpintegrador.domain.Producto;
+import isi.aepad.tpintegrador.repository.ProductRepository;
 
 @RestController
 @RequestMapping("api/producto")

@@ -1,4 +1,4 @@
-package isi.aepad.tpintegrador.ACDZ.apptest.domain;
+package isi.aepad.tpintegrador.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class DetallePedido {
+public class DetalleOrdenDeCompra {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,7 +68,7 @@ public class DetallePedido {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		DetallePedido other = (DetallePedido) obj;
+		DetalleOrdenDeCompra other = (DetalleOrdenDeCompra) obj;
 		if (cantidad == null) {
 			if (other.cantidad != null)
 				return false;
@@ -98,9 +98,8 @@ public class DetallePedido {
 	}
 	@Override
 	public String toString() {
-		return "DetallePedido [id=" + id + ", producto=" + producto + ", cantidad=" + cantidad + ", precio=" + precio
-				+ ", total=" + total + "]";
+		return "DetalleOrdenDeCompra [id=" + id + ", producto=" + producto + ", cantidad=" + cantidad + ", precio="
+				+ precio + ", total=" + total + "]";
 	}
-	
 	
 }
