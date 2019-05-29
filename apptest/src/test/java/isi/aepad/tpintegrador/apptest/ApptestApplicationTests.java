@@ -1,4 +1,4 @@
-package isi.aepad.tpintegrador.ACDZ.apptest;
+package isi.aepad.tpintegrador.apptest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
