@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import isi.aepad.tpintegrador.domain.Producto;
-import isi.aepad.tpintegrador.repository.ProductRepository;
+import isi.aepad.tpintegrador.repository.ProductoRepository;
 
 @RestController
 @RequestMapping("api/producto")
 public class ProductoRest {
 	
 	@Autowired
-	ProductRepository prdRepo;
+	ProductoRepository prdRepo;
 	
 	@GetMapping("crear")
 	public ResponseEntity<Void> crear(){
