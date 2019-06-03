@@ -8,11 +8,11 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>isi.aepad.tpintegrador.ACDZ</groupId>
+	<groupId>isi.aepad.tpintegrador</groupId>
 	<artifactId>apptest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>apptest</name>
-	<description>Demo project for Spring Boot</description>
+	<description>TP Integrador AEPAD</description>
 
 	<properties>
 		<java.version>1.8</java.version>
