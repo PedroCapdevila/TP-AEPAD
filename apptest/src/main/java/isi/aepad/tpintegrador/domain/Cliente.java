@@ -1,5 +1,6 @@
 package isi.aepad.tpintegrador.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Cliente {
 	
@@ -16,17 +19,18 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nombre;
-	
 	@OneToOne
 	private Localidad localidad;
 	
 	@OneToMany(mappedBy = "cliente")
-	private List<Pedido> pedidosRealizados;
+	@JsonIgnore
+	private List<Pedido> pedidosRealizados = new ArrayList<Pedido>(); 
 	
 	@OneToOne
 	private MedioDePago medioDePago;
 	
-	//TODO: private List<Pago> pagosRealizados; ???
+	private int pagosRealizados;
+
 	private Double puntosAcumulados;
 
 	public Integer getId() {
@@ -76,6 +80,14 @@ public class Cliente {
 	public void setPuntosAcumulados(Double puntosAcumulados) {
 		this.puntosAcumulados = puntosAcumulados;
 	}
+	
+	public int getPagosRealizados() {
+		return pagosRealizados;
+	}
+
+	public void setPagosRealizados(int pagosRealizados) {
+		this.pagosRealizados = pagosRealizados;
+	}
 
 	@Override
 	public int hashCode() {
@@ -85,6 +97,7 @@ public class Cliente {
 		result = prime * result + ((localidad == null) ? 0 : localidad.hashCode());
 		result = prime * result + ((medioDePago == null) ? 0 : medioDePago.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + pagosRealizados;
 		result = prime * result + ((pedidosRealizados == null) ? 0 : pedidosRealizados.hashCode());
 		result = prime * result + ((puntosAcumulados == null) ? 0 : puntosAcumulados.hashCode());
 		return result;
@@ -119,6 +132,8 @@ public class Cliente {
 				return false;
 		} else if (!nombre.equals(other.nombre))
 			return false;
+		if (pagosRealizados != other.pagosRealizados)
+			return false;
 		if (pedidosRealizados == null) {
 			if (other.pedidosRealizados != null)
 				return false;
@@ -135,7 +150,8 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nombre=" + nombre + ", localidad=" + localidad + ", pedidosRealizados="
-				+ pedidosRealizados + ", medioDePago=" + medioDePago + ", puntosAcumulados=" + puntosAcumulados + "]";
+				+ pedidosRealizados + ", medioDePago=" + medioDePago + ", pagosRealizados=" + pagosRealizados
+				+ ", puntosAcumulados=" + puntosAcumulados + "]";
 	}
 	
 	
