@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,7 +33,7 @@ public class UsuarioRest {
 	}
 	
 	@GetMapping("buscar/{id}")
-	public ResponseEntity<Usuario> buscar(@RequestParam(value="id") Integer idUsuario) {
+	public ResponseEntity<Usuario> buscar(@PathVariable (value="id") Integer idUsuario) {
 		return  new ResponseEntity<Usuario>(this.usuarioService.buscarPorId(idUsuario), HttpStatus.OK);
 	}
 	
@@ -54,7 +55,7 @@ public class UsuarioRest {
 	}
 	
 	@DeleteMapping("borrar/{id}")
-	public ResponseEntity<Void> borrar(@RequestParam(value="id") Integer idUsuario) {
+	public ResponseEntity<Void> borrar(@PathVariable (value="id") Integer idUsuario) {
         this.usuarioService.borrar(idUsuario);
         return new ResponseEntity<Void>(HttpStatus.OK);
 	}

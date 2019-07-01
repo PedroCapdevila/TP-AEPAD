@@ -58,5 +58,6 @@ public class MedioDePagoRest {
         this.medioDePagoService.borrar(idMedioDePago);
         return new ResponseEntity<Void>(HttpStatus.OK);
 	}
+	
 
 }
