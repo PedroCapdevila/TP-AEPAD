@@ -1,9 +1,9 @@
 package isi.aepad.tpintegrador.domain;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -19,6 +18,7 @@ public class OrdenDeCompra {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_ORDENDECOMPRA")
 	private Integer id;
 	private Integer nro;
 	private String fecha;
@@ -26,7 +26,7 @@ public class OrdenDeCompra {
 	@OneToOne
 	private Cliente cliente;
 	
-	@OneToMany(mappedBy = "ordenDeCompra")
+	@OneToMany(mappedBy = "ordenDeCompra", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JsonIgnore
 	private List<DetalleOrdenDeCompra> detalleOrdenDeCompra;
 	

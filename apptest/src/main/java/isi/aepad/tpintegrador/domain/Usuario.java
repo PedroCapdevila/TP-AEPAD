@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Usuario {
 	
 	//TODO: DEBERÍA SER UNA CLAVE COMPUESTA?
-
+ 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;

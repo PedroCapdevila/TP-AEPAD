@@ -16,7 +16,7 @@ public class DetallePedido {
 	private Integer id;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_PEDIDO")
+	@JoinColumn(name="ID_PEDIDO")
 	private Pedido pedido;
 	
 	@OneToOne
