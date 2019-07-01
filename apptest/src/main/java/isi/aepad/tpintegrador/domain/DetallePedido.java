@@ -107,6 +107,12 @@ public class DetallePedido {
 		return "DetallePedido [id=" + id + ", producto=" + producto + ", cantidad=" + cantidad + ", precio=" + precio
 				+ ", total=" + total + "]";
 	}
+	public Pedido getPedido() {
+		return pedido;
+	}
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
 	
 	
 }

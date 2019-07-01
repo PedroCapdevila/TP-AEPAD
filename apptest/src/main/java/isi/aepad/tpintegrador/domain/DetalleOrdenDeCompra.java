@@ -55,6 +55,12 @@ public class DetalleOrdenDeCompra {
 	public void setTotal(Double total) {
 		this.total = total;
 	}
+	public OrdenDeCompra getOrdenDeCompra() {
+		return ordenDeCompra;
+	}
+	public void setOrdenDeCompra(OrdenDeCompra ordenDeCompra) {
+		this.ordenDeCompra = ordenDeCompra;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
