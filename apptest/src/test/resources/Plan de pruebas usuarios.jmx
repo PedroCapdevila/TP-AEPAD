@@ -12,13 +12,38 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="SERVER_NAME" elementType="Argument">
+            <stringProp name="Argument.name">SERVER_NAME</stringProp>
+            <stringProp name="Argument.value">192.168.99.100</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SERVER_PORT" elementType="Argument">
+            <stringProp name="Argument.name">SERVER_PORT</stringProp>
+            <stringProp name="Argument.value">9002</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="0" elementType="Argument">
+            <stringProp name="Argument.name">0</stringProp>
+            <stringProp name="Argument.value">&quot;Contado&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="1" elementType="Argument">
+            <stringProp name="Argument.name">1</stringProp>
+            <stringProp name="Argument.value">&quot;Tarjeta&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Usuario cliente consulta 10 productos" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Controlador Bucle" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">7000</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -71,31 +96,6 @@
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="SERVER_NAME" elementType="Argument">
-              <stringProp name="Argument.name">SERVER_NAME</stringProp>
-              <stringProp name="Argument.value">localhost</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="SERVER_PORT" elementType="Argument">
-              <stringProp name="Argument.name">SERVER_PORT</stringProp>
-              <stringProp name="Argument.value">8080</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="0" elementType="Argument">
-              <stringProp name="Argument.name">0</stringProp>
-              <stringProp name="Argument.value">&quot;Contado&quot;</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="1" elementType="Argument">
-              <stringProp name="Argument.name">1</stringProp>
-              <stringProp name="Argument.value">&quot;Tarjeta&quot;</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">10</stringProp>
@@ -136,7 +136,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1000</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -302,31 +302,6 @@
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="SERVER_NAME" elementType="Argument">
-              <stringProp name="Argument.name">SERVER_NAME</stringProp>
-              <stringProp name="Argument.value">localhost</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="SERVER_PORT" elementType="Argument">
-              <stringProp name="Argument.name">SERVER_PORT</stringProp>
-              <stringProp name="Argument.value">8080</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="0" elementType="Argument">
-              <stringProp name="Argument.name">0</stringProp>
-              <stringProp name="Argument.value">&quot;Contado&quot;</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="1" elementType="Argument">
-              <stringProp name="Argument.name">1</stringProp>
-              <stringProp name="Argument.value">&quot;Tarjeta&quot;</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
@@ -429,31 +404,6 @@
             </elementProp>
           </collectionProp>
         </HeaderManager>
-        <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="SERVER_NAME" elementType="Argument">
-              <stringProp name="Argument.name">SERVER_NAME</stringProp>
-              <stringProp name="Argument.value">localhost</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="SERVER_PORT" elementType="Argument">
-              <stringProp name="Argument.name">SERVER_PORT</stringProp>
-              <stringProp name="Argument.value">8080</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="0" elementType="Argument">
-              <stringProp name="Argument.name">0</stringProp>
-              <stringProp name="Argument.value">&quot;Contado&quot;</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="1" elementType="Argument">
-              <stringProp name="Argument.name">1</stringProp>
-              <stringProp name="Argument.value">&quot;Tarjeta&quot;</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
         <hashTree/>
         <ResultCollector guiclass="ComparisonVisualizer" testclass="ResultCollector" testname="Visualizador de la aserción de comparación" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>

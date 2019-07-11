@@ -38,12 +38,12 @@
           <collectionProp name="Arguments.arguments">
             <elementProp name="SERVER_NAME" elementType="Argument">
               <stringProp name="Argument.name">SERVER_NAME</stringProp>
-              <stringProp name="Argument.value">localhost</stringProp>
+              <stringProp name="Argument.value">192.168.99.100</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="SERVER_PORT" elementType="Argument">
               <stringProp name="Argument.name">SERVER_PORT</stringProp>
-              <stringProp name="Argument.value">8080</stringProp>
+              <stringProp name="Argument.value">9002</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="0" elementType="Argument">
@@ -59,17 +59,63 @@
           </collectionProp>
         </Arguments>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding">csv</stringProp>
-          <stringProp name="filename">C:/Users/tinch/OneDrive/Facultad/Análisis y Evaluación de Performance en Arquitecturas Distribuidas/TP/TP Aepad/TP-AEPAD/apptest/src/test/resources/Medio de pago.csv</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">false</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">true</boolProp>
-          <stringProp name="variableNames">medioDePago</stringProp>
-        </CSVDataSet>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AltaMedioDePago" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;descripcion&quot;: &quot;tarjeta&quot;&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${SERVER_NAME}</stringProp>
+          <stringProp name="HTTPSampler.port">${SERVER_PORT}</stringProp>
+          <stringProp name="HTTPSampler.protocol">HTTP</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/medioDePago/crear</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AltaMedioDePago" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;descripcion&quot;: &quot;contado&quot;&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${SERVER_NAME}</stringProp>
+          <stringProp name="HTTPSampler.port">${SERVER_PORT}</stringProp>
+          <stringProp name="HTTPSampler.protocol">HTTP</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/medioDePago/crear</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
@@ -106,36 +152,6 @@
             <stringProp name="HTTPSampler.protocol">HTTP</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">/api/usuario/crear</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AltaMedioDePago" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-	&quot;id&quot;: 0,&#xd;
-	&quot;descripcion&quot;: &quot;${medioDePago}&quot;&#xd;
-}&#xd;
-</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${SERVER_NAME}</stringProp>
-            <stringProp name="HTTPSampler.port">${SERVER_PORT}</stringProp>
-            <stringProp name="HTTPSampler.protocol">HTTP</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/api/medioDePago/crear</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -234,7 +250,8 @@
                   <stringProp name="Argument.value">{&#xd;
 	&quot;id&quot;: 0,&#xd;
 	&quot;nombre&quot;:&quot;${__RandomString(10,abcdefg)}&quot;,&#xd;
-	&quot;localidad&quot;:{&quot;id&quot;:${idLocalidad}}&#xd;
+	&quot;localidad&quot;:{&quot;id&quot;:${idLocalidad}},&#xd;
+	&quot;medioDePago&quot;: {&quot;id&quot;: ${__Random(1,2)}}&#xd;
 }&#xd;
 </stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -274,7 +291,7 @@
                   <stringProp name="Argument.value">{&#xd;
 	&quot;id&quot;: 0,&#xd;
 	&quot;nro&quot;: ${__Random(0,100)},&#xd;
-	&quot;fecha&quot;: &quot;30/6/2019&quot;,&#xd;
+	&quot;fecha&quot;: &quot;${__RandomDate(yyyy-MM-dd,,2050-07-08,,)}&quot;,&#xd;
 	&quot;cliente&quot;: {&quot;id&quot;:${idCliente}}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -314,7 +331,7 @@
                   <stringProp name="Argument.value">{&#xd;
 	&quot;id&quot;: 0,&#xd;
 	&quot;nro&quot;: ${__Random(0,100)},&#xd;
-	&quot;fecha&quot;: &quot;30/12/2019&quot;,&#xd;
+	&quot;fecha&quot;: &quot;${__RandomDate(yyyy-MM-dd,,2050-07-08,,)}&quot;,&#xd;
 	&quot;cliente&quot;: {&quot;id&quot;:${idCliente}}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>

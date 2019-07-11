@@ -1,5 +1,6 @@
 package isi.aepad.tpintegrador.domain;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -21,7 +22,7 @@ public class OrdenDeCompra {
 	@Column(name="ID_ORDENDECOMPRA")
 	private Integer id;
 	private Integer nro;
-	private String fecha;
+	private Date fecha;
 	
 	@OneToOne
 	private Cliente cliente;
@@ -42,10 +43,10 @@ public class OrdenDeCompra {
 	public void setNro(Integer nro) {
 		this.nro = nro;
 	}
-	public String getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
-	public void setFecha(String fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 	public Cliente getCliente() {
