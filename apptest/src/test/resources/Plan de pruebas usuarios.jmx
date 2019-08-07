@@ -43,13 +43,27 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">7000</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">15000</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">300</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Valores por Defecto para Petición HTTP" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${SERVER_NAME}</stringProp>
+          <stringProp name="HTTPSampler.port">${SERVER_PORT}</stringProp>
+          <stringProp name="HTTPSampler.protocol">HTTP</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">99999999999999999</stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Ver Árbol de Resultados" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -129,6 +143,12 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">true</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">true</boolProp>
+        </DebugSampler>
+        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Usuario cliente consulta y genera pedido" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -136,13 +156,27 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1000</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">6000</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">300</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Valores por Defecto para Petición HTTP" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${SERVER_NAME}</stringProp>
+          <stringProp name="HTTPSampler.port">${SERVER_PORT}</stringProp>
+          <stringProp name="HTTPSampler.protocol">HTTP</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">99999999999999999</stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AltaPedido" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -152,7 +186,7 @@
                 <stringProp name="Argument.value">{&#xd;
 	&quot;id&quot;:0,&#xd;
 	&quot;nro&quot;: ${__Random(0,100)},&#xd;
-	&quot;fecha&quot;: &quot;30/6/2019&quot;,&#xd;
+	&quot;fecha&quot;: &quot;2019-06-30&quot;,&#xd;
 	&quot;cliente&quot;: {&quot;id&quot;:1}&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -303,9 +337,9 @@
         </HeaderManager>
         <hashTree/>
         <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterProperties">true</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
-          <boolProp name="displaySystemProperties">false</boolProp>
+          <boolProp name="displaySystemProperties">true</boolProp>
         </DebugSampler>
         <hashTree/>
       </hashTree>
@@ -315,8 +349,8 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">7000</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">300</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
@@ -336,7 +370,7 @@
                   <stringProp name="Argument.value">{&#xd;
 	&quot;id&quot;: 0,&#xd;
 	&quot;nro&quot;: ${__Random(0,100)},&#xd;
-	&quot;fecha&quot;: &quot;30/12/2019&quot;,&#xd;
+	&quot;fecha&quot;: &quot;2019-06-15&quot;,&#xd;
 	&quot;cliente&quot;: {&quot;id&quot;:${__Random(0,100)}}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
